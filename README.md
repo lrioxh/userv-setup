@@ -111,8 +111,6 @@ custom_channels:
   deepmodeling: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
 ```
 
-conda环境迁移参考`mv_env.sh`
-
 全局pip配置 配置文件`/etc/pip.conf`, 参考：
 ```bash
 [global]
@@ -143,7 +141,9 @@ export CONDARC=/etc/conda/.condarc #for conda
 export HF_HOME=/data/cache/huggingface #for huggingface
 #其他全局配置...
 ```
+conda环境
 
+环境迁移参考`./mv_env.sh`
 
 #### 危险操作
 

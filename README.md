@@ -61,7 +61,7 @@ sudo chmod a+r /usr/local/cuda-11.7/lib64/libcudnn*
 ```
 
 #### bash&用户&conda
-接下来几步穿插进行，建议[b]先全看一遍[/b]
+接下来几步穿插进行，建议**先全看一遍**
 
 账户, 注意修改个人配置模板aka本项目下的bashrc, 主要为最后的conda和cuda路径, 新建账户会复制本项目bashrc为初始个人bash配置
 
@@ -110,6 +110,8 @@ custom_channels:
   simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   deepmodeling: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
 ```
+
+conda环境迁移参考`mv_env.sh`
 
 全局pip配置 配置文件`/etc/pip.conf`, 参考：
 ```bash

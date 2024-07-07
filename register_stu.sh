@@ -25,7 +25,7 @@ fi
 # 创建用户并设置密码
 mkdir -p /data/sda/$username
 ln -s /data/sda/$username /home/$username
-useradd -d /home/$username -g stu -G sudo -u $userid -s /bin/bash "$username"
+useradd -d /home/$username -g stu -G stu,sudo -u $userid -s /bin/bash "$username"
 echo "$username:$passwd" | chpasswd
 rm /home/$username/$username
 chown -R $username /data/sda/$username

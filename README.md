@@ -81,10 +81,11 @@ conda、pip、huggingface
 conda安装时选择路径建议`/opt/anaconda3` 或 `/usr/local/anaconda3`
 ```bash
 #为用户组stu安装共享的conda
+chgrp -R stu /路径
 chmod g+s /路径 #GID
 find /opt/anaconda3 -type d -exec chmod g+s {} +
-chgrp -R stu /路径
 chmod -R g+w /opt/anaconda3/pkgs
+setfacl -R -m d:g::rwx /opt/anaconda3/pkgs #新建文件默认有组写入权
 ```
 修改全局conda配置，可以先conda info 查看/etc下有没有全局配置文件
 

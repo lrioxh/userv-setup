@@ -63,7 +63,9 @@ sudo chmod a+r /usr/local/cuda-11.7/lib64/libcudnn*
 #### bash&用户&conda
 接下来几步穿插进行，建议**先全看一遍**
 
-账户, 注意修改个人配置模板aka本项目下的bashrc, 主要为最后的conda和cuda路径, 新建账户会复制本项目bashrc为初始个人bash配置
+账户, 注意修改个人配置模板aka本项目下的`./bashrc`, 主要为最后的conda和cuda路径, 新建账户会复制本项目为初始个人bash配置
+
+`./bashrc`还包含以下功能：彩色终端
 
 ```
 sudo groupadd stu #用户组
@@ -140,8 +142,32 @@ unset __conda_setup
 export CONDARC=/etc/conda/.condarc #for conda
 export HF_HOME=/data/cache/huggingface #for huggingface
 #其他全局配置...
+
+# 附加功能：遍历并运行指定目录下的脚本
+scripts_dir="/usr/local/bin/scripts"
+
+# if [ -d "$scripts_dir" ]; then
+#     for script in "$scripts_dir"/*.sh; do
+#         # 检查是否确实存在脚本文件
+#         if [ -f "$script" ]; then
+#             # 确保脚本是可执行的
+#             # chmod +x "$script"
+#             # 运行脚本
+#             "$script"
+#         fi
+#     done
+# fi
 ```
-conda环境
+可选附加功能：
+- 个人目录容量限制警告：
+  ```bash
+  mkdir -p /usr/local/bin/scripts
+  cp ./occu_alert.sh /usr/local/bin/scripts
+  chmod +x /usr/local/bin/scripts/occu_alert.sh
+  echo "${scripts_dir}/occu_alert.sh ${HOME} 100" >> /etc/*bashrc 
+  ```
+
+conda环境(重难点)
 
 环境迁移参考`./mv_env.sh`
 

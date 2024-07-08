@@ -15,6 +15,7 @@ sudo apt install gcc g++ vim
 ```
 
 nv驱动，可能已预装，`nvidia-smi`查看
+`apt install nvidia-driver-xxx`
 
 ssh
 

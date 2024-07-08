@@ -172,6 +172,10 @@ conda环境(重难点)
 
 环境迁移参考`./mv_env.sh`
 
+#### 小工具
+- `send_notice.sh` 向用户/组发送消息
+- `send_notice_offline.sh` 向用户/组留言（离线消息）
+
 #### 危险操作
 
 修改分区大小

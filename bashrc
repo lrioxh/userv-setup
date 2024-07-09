@@ -131,6 +131,29 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# add proxy via host
+# export socks_hostport=10810    #clash默认为7890
+# export http_hostport=10811
+# alias proxyon='
+#     export https_proxy="http://${hostip}:${http_hostport}"
+#     export http_proxy="http://${hostip}:${http_hostport}"
+#     export ALL_PROXY="socks5://${hostip}:${socks_hostport}"
+#     export all_proxy="socks5://${hostip}:${socks_hostport}"
+# '
+# alias proxyoff='
+#     unset ALL_PROXY
+#     unset https_proxy
+#     unset http_proxy
+#     unset all_proxy
+# '
+# alias proxyecho='
+#     echo $ALL_PROXY
+#     echo $all_proxy
+#     echo $https_proxy
+#     echo $http_proxy
+# '
+#end proxy
+
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia
 # CUDA库函数的路径
 export LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH

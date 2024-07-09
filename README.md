@@ -159,7 +159,13 @@ scripts_dir="/usr/local/bin/scripts"
 #     done
 # fi
 ```
-可选附加功能：
+
+conda环境(重难点)
+
+环境迁移参考`./mv_env.sh`
+
+#### 其他小功能/工具
+
 - 个人目录容量限制警告：
   ```bash
   mkdir -p /usr/local/bin/scripts
@@ -167,11 +173,14 @@ scripts_dir="/usr/local/bin/scripts"
   chmod +x /usr/local/bin/scripts/occu_alert.sh
   echo "${scripts_dir}/occu_alert.sh ${HOME} 100" >> /etc/*bashrc 
   ```
-
-conda环境(重难点)
-
-环境迁移参考`./mv_env.sh`
-
+- 通知用户/组：`send_notice.sh`
+- 服务器借用个人VPN代理：
+  将个人`.bashrc`中proxy部分解注释, 
+  ```bash
+  export hostip=vpn宿主ip
+  proxyon #在本终端内临时使用代理
+  proxyoff #关闭代理
+  ```
 #### 危险操作
 
 修改分区大小

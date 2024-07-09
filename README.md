@@ -15,6 +15,7 @@ sudo apt install gcc g++ vim
 ```
 
 nv驱动，可能已预装，`nvidia-smi`查看
+`apt install nvidia-driver-xxx`
 
 ssh
 
@@ -173,7 +174,8 @@ conda环境(重难点)
   chmod +x /usr/local/bin/scripts/occu_alert.sh
   echo "${scripts_dir}/occu_alert.sh ${HOME} 100" >> /etc/*bashrc 
   ```
-- 通知用户/组：`send_notice.sh`
+- `send_notice.sh` 向用户/组发送消息
+- `send_notice_offline.sh` 向用户/组留言（离线消息）
 - 服务器借用个人VPN代理：
   将个人`.bashrc`中proxy部分解注释, 
   ```bash

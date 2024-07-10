@@ -52,7 +52,7 @@ cuda cudnn
 
 ```bash
 wget https://developer.download.nvidia.com/compute/cuda/11.7.1/local_installers/cuda_11.7.1_515.65.01_linux.run
-sudo sh cuda_11.7.1_515.65.01_linux.run [ --toolkit --override]
+sudo sh cuda_11.7.1_515.65.01_linux.run [ --toolkit --override --silent]
 
 #cudnn
 sudo cp cuda/include/cudnn.h /usr/local/cuda-11.7/include

@@ -1,12 +1,13 @@
 #!/bin/bash
 
+## 注意：如果不清楚脚本逻辑，建议每条命令复制到命令行单独运行
+
 # 输出脚本执行的每一条命令
 set -x
 
-# source /opt/anaconda3/bin/activate
 if [ "$#" -ne 2 ]; then
     echo "使用方法: $0 原环境路径 环境名"
-    echo "例如: $0 /data/anaconda3/envs/envname envname; 两envname可不同"
+    echo "例如: $0 /data/anaconda3/envs/envname envname; 两envname可不同以重命名"
     exit 1
 fi
 
@@ -15,7 +16,7 @@ old_path=$1
 name=$2
 
 # 移动旧环境的所有文件到缓存目录
-mv $old_path/* ${HOME}/.conda/envs/${name}_cache
+mv -p $old_path/* ${HOME}/.conda/envs/${name}_cache
 
 ## yaml方式
 # conda activate ${name}_cache

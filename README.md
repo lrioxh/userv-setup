@@ -48,6 +48,9 @@ sudo mount -a
 
 *接下来可以远程操作了
 
+关闭自动休眠
+`systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target`
+
 cuda cudnn
 
 ```bash

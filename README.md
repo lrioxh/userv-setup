@@ -67,7 +67,7 @@ sudo chmod a+r /usr/local/cuda-11.7/lib64/libcudnn*
 #### bash&用户&conda
 接下来几步穿插进行，建议**先全看一遍**
 
-账户, 注意修改个人配置模板aka本项目下的`./bashrc`, 主要为最后的conda和cuda路径, 新建账户会复制本项目为初始个人bash配置
+账户, 注意修改个人配置模板aka本项目下的`./bashrc`, 主要为最后的conda和cuda路径, 新建账户会复制本项目模板为初始个人bash配置, 以及profile
 
 `./bashrc`还包含以下功能：彩色终端
 

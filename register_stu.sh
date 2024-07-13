@@ -28,10 +28,11 @@ ln -s /data/sda/$username /home/$username
 useradd -d /home/$username -g stu -G stu,sudo -u $userid -s /bin/bash "$username"
 echo "$username:$passwd" | chpasswd
 rm /home/$username/$username
-chown -R $username /data/sda/$username
 cp ./bashrc /home/$username/.bashrc
+cp ./profile /home/$username/.profile
+chown -R $username /data/sda/$username
 
-bash ./send_notice_offline.sh $username "NOTICE: conda & cuda has already installed, please check via 'conda info; nvcc -V'.
+bash ./send_notice_offline.sh $username "NOTICE: conda & cuda has already installed, please check via 'conda info; nvcc -V'."
 
 # 显示创建结果
 if id "$username" &>/dev/null; then

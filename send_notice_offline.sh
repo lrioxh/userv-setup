@@ -21,12 +21,17 @@ function send_message_to_user() {
     if [ -f $user_home/.notified ];then
         rm -f $user_home/.notified
     fi    
-    notify_script="$user_home/.profile_notify.sh"
+    notify_script="$user_home/.bash_notify.sh"
     sudo echo -e "#!/bin/bash\nif [ ! -f ~/.notified ]; then\necho \"$message\"\ntouch ~/.notified\nfi" > "$notify_script"
     sudo chown "$user": "$notify_script"
     sudo chmod +x "$notify_script"
-    echo "source $notify_script" | sudo tee -a "$user_home/.profile" > /dev/null
-    echo "登录通知已添加到用户 $user 的 .profile"
+    # echo "source $notify_script" | sudo tee -a "$user_home/.bash" > /dev/null
+    if ! grep -Fxq "source $notify_script" "$user_home/.bashrc"; then
+        echo "source $notify_script" | sudo tee -a "$user_home/.bashrc" > /dev/null
+    else
+        echo "$user_home/.bashrc: 内容已存在"
+    fi
+    echo "登录通知已添加到用户 $user 的 .bashrc"
 }
 
 # 检查目标是用户还是组

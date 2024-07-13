@@ -31,6 +31,8 @@ rm /home/$username/$username
 chown -R $username /data/sda/$username
 cp ./bashrc /home/$username/.bashrc
 
+bash ./send_notice_offline.sh $username "NOTICE: conda & cuda has already installed, please check via 'conda info; nvcc -V'.
+
 # 显示创建结果
 if id "$username" &>/dev/null; then
     echo "用户 $username 创建成功。"

@@ -17,7 +17,7 @@ usage=$(du -sh --block-size=1G "$resolved_directory" | awk '{print $1}' | sed 's
 
 # 检查是否超出阈值
 if [ "$usage" -ge "$threshold" ]; then
-    echo "警告：目录 $resolved_directory 占用空间达到 ${usage}GB > ${threshold}GB"
+    echo "提醒：目录 $resolved_directory 占用空间达到 ${usage}GB > ${threshold}GB"
 # else
     # echo "目录 $resolved_directory 已占用空间为 ${usage}GB，未超过阈值 ${threshold}GB"
 fi

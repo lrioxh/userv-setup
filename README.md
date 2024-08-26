@@ -163,6 +163,14 @@ scripts_dir="/usr/local/bin/scripts"
 #     done
 # fi
 ```
+可以发现我们自定义了pip和huggingface的cache路径，也需要给这些路径权限，参考conda安装
+```bash
+chgrp -R stu /路径
+chmod g+s /路径 #GID
+find /路径 -type d -exec chmod g+s {} +
+chmod -R g+w /路径
+setfacl -R -m d:g::rwx /路径
+```
 
 conda环境(重难点)
 
@@ -180,12 +188,13 @@ conda环境(重难点)
 - `send_notice.sh` 向用户/组发送消息
 - `send_notice_offline.sh` 向用户/组留言（离线消息）
 - 服务器借用个人VPN代理：
-  将个人`.bashrc`中proxy部分解注释, 
+  将个人`.bashrc`中proxy部分解注释, 需要代理软件允许局域网连接
   ```bash
   export hostip=vpn宿主ip
   proxyon #在本终端内临时使用代理
   proxyoff #关闭代理
   ```
+- `GPU_occu.sh` GPU资源监控记录, 可将定时任务添加至`crontab -e`
 #### 危险操作
 
 修改分区大小
